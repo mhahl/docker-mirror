@@ -111,9 +111,6 @@ func main() {
 	}
 	log.Infof("Connected to Docker daemon: %s @ %s", info.Name, info.ServerVersion)
 
-	// init AWS client
-	log.Info("Creating AWS client")
-
 	backoffSettings := backoff.NewExponentialBackOff()
 	backoffSettings.InitialInterval = 1 * time.Second
 	backoffSettings.MaxElapsedTime = 10 * time.Second
